@@ -45,11 +45,11 @@ class RedDragon(Dragon):
         self._attack = 10
         self._color = 'красный'
     
-    def qeustion(self):
+    def question(self):
         x = randint(1, 100)
         y = randint(1, 100)
-        self_quest = str(x) + '-' + str(y)
-        self._set_answer(x - y)
+        self__quest = str(x) + '-' + str(y)
+        self.set_answer(x - y)
         return self.__quest
         
 class BlackDragon(Dragon):
@@ -61,9 +61,9 @@ class BlackDragon(Dragon):
     def question(self):
         x = randint(1, 20)
         y = randint(1, 20)
-        self._quest = str(x) + '*' + str(y)
-        self._set_answer(x * y)
-        return self._quest
+        self.__quest = str(x) + '*' + str(y)
+        self.set_answer(x * y)
+        return self.__quest
 #FIXME здесь также должны быть описаны классы RedDragon и BlackDragon
 # красный дракон учит вычитанию, а чёрный -- умножению.
 
