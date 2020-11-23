@@ -48,7 +48,7 @@ class RedDragon(Dragon):
     def question(self):
         x = randint(1, 100)
         y = randint(1, 100)
-        self__quest = str(x) + '-' + str(y)
+        self.__quest = str(x) + '-' + str(y)
         self.set_answer(x - y)
         return self.__quest
         
