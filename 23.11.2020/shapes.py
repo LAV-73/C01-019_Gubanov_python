@@ -1,23 +1,27 @@
 class Shape():
-	side_length = None
-	height_legnth = None
-	def getParam(self):
-		self.side_length, self.height_length = list(map(float, input().split()))
+	__side_length = None
+	__height_legnth = None
+	def setParam(self):
+		self.__side_length, self.__height_length = list(map(float, input().split()))
+	def getSideLength(self):
+		return self.__side_length
+	def getHeightLength(self):
+		return self.__height_length
 
 class Triangle(Shape):
 	def area(self):
-		return self.side_length * self.height_length / 2
+		return self.getSideLength() * self.getHeightLength() / 2
 
 class Rectangle(Shape):
 	def area(self):
-		return self.side_length * self.height_length
+		return self.getSideLength() * self.getHeightLength()
 
 if __name__ == '__main__':
 	triangle1 = Triangle()
 	rectangle1 = Rectangle()
 
-	triangle1.getParam()
-	rectangle1.getParam()
+	triangle1.setParam()
+	rectangle1.setParam()
 	
-	print("Площадь треугольника: ", round(triangle1.area(), 3))
-	print("Площадь прямоугольника: ", round(rectangle1.area(), 3))
+	print("Площадь треугольника: ", round(triangle1.area(), 2))
+	print("Площадь прямоугольника: ", round(rectangle1.area(), 2))
