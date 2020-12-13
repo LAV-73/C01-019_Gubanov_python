@@ -25,6 +25,13 @@ class Dragon(Enemy):
     def check_answer(self, answer):
         return answer == self.__answer
 
+class Troll(Enemy):
+    def set_answer(self, answer):
+        self.__answer = answer
+
+    def check_answer(self, answer):
+        return answer == self.__answer
+
 class GreenDragon(Dragon):
     def __init__(self):
         self._health = 200
@@ -64,7 +71,7 @@ class BlackDragon(Dragon):
         self.set_answer(x * y)
         return self.__quest
 
-class FirstTroll(Dragon):
+class ChaoticTroll(Troll):
 	def __init__(self):
 		self._health = 50
 		self._attack = 75
@@ -76,19 +83,7 @@ class FirstTroll(Dragon):
 		self.set_answer(x)
 		return self.__quest
 
-class ChaoticTroll(Dragon):
-	def __init__(self):
-		self._health = 50
-		self._attack = 75
-		self._color = 'хаотический'
-
-	def question(self):
-		x = randint(1, 5)
-		self.__quest = 'Угадай случайное число от 1 до 5'
-		self.set_answer(x)
-		return self.__quest
-
-class SimpleTroll(Dragon):
+class PrimalTroll(Troll):
 	def __init__(self):
 		self._health = 50
 		self._attack = 75
@@ -108,7 +103,7 @@ class SimpleTroll(Dragon):
 		self.set_answer(self.__isPrime(x))
 		return self.__quest
 
-class MultiTroll(Dragon):
+class MultiTroll(Troll):
 	def __init__(self):
 		self._health = 50
 		self._attack = 75
@@ -127,4 +122,4 @@ class MultiTroll(Dragon):
 		self.set_answer(self.__allMultiplyers(x))
 		return self.__quest
 
-enemy_types = [GreenDragon, RedDragon, BlackDragon, ChaoticTroll, SimpleTroll, MultiTroll]
+enemy_types = [GreenDragon, RedDragon, BlackDragon, ChaoticTroll, PrimalTroll, MultiTroll]
