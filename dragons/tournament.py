@@ -38,7 +38,6 @@ def game_tournament(hero, dragon_list):
 
     if hero.is_alive():
         print('Поздравляем! Вы победили!')
-        print('Ваш накопленный опыт:', hero._experience)
     else:
         print('К сожалению, Вы проиграли...')
 
